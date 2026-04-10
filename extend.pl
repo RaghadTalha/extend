@@ -43,6 +43,8 @@ extends_to(X, Y) :-
 
 
 % Example (once you fill in the facts and rules):
+% swipl
+?- ['extend.pl'].
 ?- extends_to(oak, cherry).
 ?- extends_to(pine, fir).
 
