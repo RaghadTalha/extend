@@ -41,5 +41,8 @@ extends_to(X, Y) :-
     direct_extends(X, Z),
     extends_to(Z, Y).
 
+
 % Example (once you fill in the facts and rules):
-% ?- extends_to(oak, cherry).
+?- extends_to(oak, cherry).
+?- extends_to(pine, fir).
+
