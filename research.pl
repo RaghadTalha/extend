@@ -61,4 +61,6 @@ shares_collaborator(X, Y) :-
 % someone other than themselves.
 research_circle_member(X) :-
     shares_interest(X, Y),
-    shares_collaborator(X, Z).
+    X \=Y,
+    shares_collaborator(X, Z),
+    X \=Z.
