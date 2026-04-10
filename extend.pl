@@ -34,12 +34,9 @@ extends(palm, date).
 
 % Base case: direct extension
 extends_to(X, Y) :-
-    extends(X, Y).
+    extends(X, Y);(extends_to(X, Z), extends_to(Z, Y)).
     
-% Recursive case: transitive extension
-extends_to(X, Y) :-
-    extends(X, Z),
-    extends_to(Z, Y).
+
 
 
 
