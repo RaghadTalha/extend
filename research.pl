@@ -10,28 +10,55 @@
 % - Do NOT import the knowledge base from another file.
 
 % Declare the facts here
+collaborates(noah, maya).
+collaborates(noah, ethan).
+collaborates(ethan, sophia).
+collaborates(sophia, grace).
+collaborates(grace, liam).
+collaborates(liam, maya).
+collaborates(maya, olivia).
+collaborates(olivia, noah).
 
+interest(noah, machine_learning).
+interest(noah, optimization).
+interest(noah, algorithms).
 
+interest(ethan, databases).
+interest(ethan, optimization).
+
+interest(sophia, machine_learning).
+interest(sophia, databases).
+interest(sophia, security).
+
+interest(grace, databases).
+interest(grace, optimization).
+
+interest(liam, machine_learning).
+interest(liam, optimization).
+
+interest(maya, databases).
+interest(maya, machine_learning).
+
+interest(olivia, algorithms).
+interest(olivia, security).
 
 % helper rule for shared interest
-shared_interest(X, Y) :-
-    % fill logic
-    .
-
+shares_interest(X, Y) :-
+    interest(X, I),
+    interest(Y, I),
+    X \= Y.
 
 % helper rule for shared collaborator
-shared_collaborator(X, Y) :-
-    % fill logic
-    .
-
+shares_collaborator(X, Y) :-
+    collaborates(X, C),
+    collaborates(Y, C),
+    X \= Y.
 
 % Complete the following horn clause.
 % An individual X is a research circle member if they
 % share a research interest with someone other than
 % themselves AND share a common collaborator with
 % someone other than themselves.
-
 research_circle_member(X) :-
-    % write logic
-    .
-
+    shares_interest(X, Y),
+    shares_collaborator(X, Z).
