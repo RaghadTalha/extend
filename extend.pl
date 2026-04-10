@@ -14,31 +14,31 @@
 % path from X to Y.
 
 % Declare your facts here
-direct_extends(oak, maple).
-direct_extends(oak, pine).
-direct_extends(maple, birch).
-direct_extends(maple, cedar).
-direct_extends(birch, elm).
-direct_extends(cedar, ash).
-direct_extends(ash, cherry).
-direct_extends(pine, spruce).
-direct_extends(pine, willow).
-direct_extends(spruce, fir).
-direct_extends(willow, walnut).
-direct_extends(willow, poplar).
-direct_extends(palm, coconut).
-direct_extends(palm, date).
+extends(oak, maple).
+extends(oak, pine).
+extends(maple, birch).
+extends(maple, cedar).
+extends(birch, elm).
+extends(cedar, ash).
+extends(ash, cherry).
+extends(pine, spruce).
+extends(pine, willow).
+extends(spruce, fir).
+extends(willow, walnut).
+extends(willow, poplar).
+extends(palm, coconut).
+extends(palm, date).
 
 
 % Complete the following horn clause(s)
 
 % Base case: direct extension
 extends_to(X, Y) :-
-    direct_extends(X, Y).
+    extends(X, Y).
 
 % Recursive case: transitive extension
 extends_to(X, Y) :-
-    direct_extends(X, Z),
+    extends(X, Z),
     extends_to(Z, Y).
 
 
